@@ -24,7 +24,7 @@ public class frmGerMateriais extends javax.swing.JInternalFrame {
     
     
     public void listarMateriais(){
-        String sql = "select material.idArea, idMaterial, tipo, material.nome, link "
+        String sql = "select material.idArea, area.nome, idMaterial, tipo, material.nome, link "
                    + "from material join area "
                    + "on material.idArea = area.idArea "
                    + "order by material.idArea Asc";
@@ -55,30 +55,15 @@ public class frmGerMateriais extends javax.swing.JInternalFrame {
         }
     }
     
-    public void pesquisarMaterial() throws SQLException{
-        /*
-        int idAreaCombo = idCombo((String) cmbAreas.getSelectedItem());
-        
-        String sql = "select material.idArea, idMaterial, tipo, material.nome, link "
-                   + "from material join area "
-                   + "on material.idArea = area.idArea "
-                   + "where area.idArea = ?"
-                   + "order by material.idArea Asc";
-            pst = conecta.prepareStatement(sql);
-            pst.setInt(1, idAreaCombo);
-            rs = pst.executeQuery();
-            tblMateriais.setModel(DbUtils.resultSetToTableModel(rs));*/
-    }
-    
     
     public void mostraItens() throws SQLException{
         int seleciona = tblMateriais.getSelectedRow();
         txtIdArea.setText(tblMateriais.getModel().getValueAt(seleciona, 0).toString());
-        txtIdMaterial.setText(tblMateriais.getModel().getValueAt(seleciona, 1).toString());
-        txtTipo.setText(tblMateriais.getModel().getValueAt(seleciona, 2).toString());
-        txtNome.setText(tblMateriais.getModel().getValueAt(seleciona, 3).toString());
-        txtLink.setText(tblMateriais.getModel().getValueAt(seleciona, 4).toString());
-        txtNomeArea.setText((String) pegaNomeArea(Integer.parseInt(tblMateriais.getModel().getValueAt(seleciona, 0).toString())));
+        txtIdMaterial.setText(tblMateriais.getModel().getValueAt(seleciona, 2).toString());
+        txtTipo.setText(tblMateriais.getModel().getValueAt(seleciona, 3).toString());
+        txtNome.setText(tblMateriais.getModel().getValueAt(seleciona, 4).toString());
+        txtLink.setText(tblMateriais.getModel().getValueAt(seleciona, 5).toString());
+        txtNomeArea.setText(tblMateriais.getModel().getValueAt(seleciona, 1).toString());
     }
     
     public void limpaCampos(){
@@ -118,20 +103,6 @@ public class frmGerMateriais extends javax.swing.JInternalFrame {
             
         }catch(SQLException error){
             JOptionPane.showMessageDialog(null, error);
-        }
-    }
-    
-    public String pegaNomeArea(int idArea) throws SQLException{
-        String sql = "Select nome from area where idArea = ?";
-        
-        pst = conecta.prepareStatement(sql);
-        pst.setInt(1, idArea);
-        rs = pst.executeQuery();
-        
-        if(rs.next()){
-            return rs.getString("nome");
-        }else{
-            return null;
         }
     }
 
@@ -253,16 +224,6 @@ public class frmGerMateriais extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jButton1)
-                        .addGap(59, 59, 59)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(110, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +247,17 @@ public class frmGerMateriais extends javax.swing.JInternalFrame {
                                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane6)))
                             .addComponent(jScrollPane1))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jButton1)
+                        .addGap(100, 100, 100)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

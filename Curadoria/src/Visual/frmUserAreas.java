@@ -137,6 +137,7 @@ public class frmUserAreas extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setTitle("Áreas");
 
         tblNao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -189,6 +190,7 @@ public class frmUserAreas extends javax.swing.JInternalFrame {
         txtId.setEnabled(false);
         jScrollPane3.setViewportView(txtId);
 
+        txtNome.setEnabled(false);
         jScrollPane4.setViewportView(txtNome);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N

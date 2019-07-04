@@ -46,6 +46,7 @@ public class frmUsuario extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Curadoria - Usuário");
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -71,6 +72,11 @@ public class frmUsuario extends javax.swing.JFrame {
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/book_open.png"))); // NOI18N
         jMenuItem2.setText("Materiais");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -134,6 +140,17 @@ public class frmUsuario extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        frmUserMateriais form = null;
+        try {
+            form = new frmUserMateriais(idLoginUsuario);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(frmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        form.setVisible(true);
+        jDesktopPane1.add(form);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

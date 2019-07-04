@@ -38,6 +38,7 @@ public class frmAdmin extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Curadoria - Admin");
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -72,6 +73,11 @@ public class frmAdmin extends javax.swing.JFrame {
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/book_open.png"))); // NOI18N
         jMenuItem5.setText("Materiais");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
@@ -146,6 +152,17 @@ public class frmAdmin extends javax.swing.JFrame {
         form.setVisible(true);
         jDesktopPane1.add(form);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        frmGerMateriais form = null;
+        try {
+            form = new frmGerMateriais();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(frmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        form.setVisible(true);
+        jDesktopPane1.add(form);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
