@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class ConectaBD {
     
-    static final String DATABASE_URL = "jdbc:postgresql://127.0.0.1:5432/CuradoriaFinal";
+    static final String DATABASE_URL = "jdbc:postgresql://127.0.0.1:5432/Curadoria";
     
     public static Connection conectar() throws ClassNotFoundException{
         try{
