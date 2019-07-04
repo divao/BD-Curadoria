@@ -18,7 +18,7 @@ O projeto foi implementado utilizando a linguagem Java e o banco de dados relaci
 ## Roteiro
 
 1. Instale o PostgreSQL:
-  * Para facilitar, coloque __postgre__ no nome de usuário e senha (caso não queira, será necessário alterá-los no arquivo ConectaBD.java);
+  * Para facilitar, coloque __postgres__ no nome de usuário e senha (caso não queira, será necessário alterá-los no arquivo ConectaBD.java);
   * Também para facilitar, crie uma base de dados com o nome __Curadoria__ (caso não queira, será necessário alterá-lo no arquivo ConectaBD.java);
   * Rode o script __Curadoria.sql__.
 2. Entre na pasta __/dist__ e execute o arquivo Curadoria.jar.
