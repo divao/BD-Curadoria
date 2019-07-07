@@ -23,4 +23,6 @@ O projeto foi implementado utilizando a linguagem Java e o banco de dados relaci
   * Rode o script __Curadoria.sql__.
 2. Entre na pasta __/dist__ e execute o arquivo Curadoria.jar.
 3. Aproveite e teste nosso banco de dados!
+  * Para logar como um usuário, escolha o ID e clique em __Entrar__. Você pode acessar a página de Áreas, onde você pode seguir ou deixar de seguir as áreas, e a página de materiais, onde você visualiza os materiais das áreas em que o usuário está inscrito.
+  * Para logar como administrador do banco de dados, clique no __ícone da engrenagem__. Você pode gerenciar usuários, áreas e materiais, adicionando, excluindo ou editando esses campos.
 4. (Opcional) Abra o NetBeans IDE e importe o projeto (pasta __Curadoria__) para verificar o código. E, se você quiser, pode executar por lá também!
